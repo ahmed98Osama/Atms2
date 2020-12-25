@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_270sdp"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/_25sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:background="@color/gray"
+    >
+
+    <TextView
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_18ssp"
+        android:layout_margin="@dimen/_15sdp"
+        android:textColor="@color/black"
+        android:id="@+id/employee_name_available"/>
+
+
+
+</RelativeLayout>

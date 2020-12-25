@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/notifications_image"
+        android:title="Notifications"
+        android:icon="@drawable/notification"/>
+    <item
+        android:id="@+id/departments_image"
+        android:title="Departments"
+        android:icon="@drawable/departments"/>
+    <item
+        android:id="@+id/requests_image"
+        android:title="Requests"
+        android:icon="@drawable/requests"/>
+    <item
+        android:id="@+id/employees_image"
+        android:title="Employees"
+        android:icon="@drawable/employees"/>
+
+</menu>

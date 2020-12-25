@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InsertingDepartmentData">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/design_default_color_primary"
+        android:id="@+id/employee_action_bar">
+        <ImageView
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:src="@drawable/back"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/go_back"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_20ssp"
+        android:layout_below="@id/employee_action_bar"
+        android:textColor="@android:color/black"
+        android:text="Department data"
+        android:layout_margin="@dimen/_10sdp"
+        android:id="@+id/department_data"/>
+
+    <EditText
+        android:layout_width="@dimen/_220sdp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_20ssp"
+        android:layout_below="@id/department_data"
+        android:hint="the department name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:id="@+id/department_name_added_by_admin"/>
+
+    <EditText
+        android:layout_width="@dimen/_220sdp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_20ssp"
+        android:layout_below="@id/department_name_added_by_admin"
+        android:hint="Head of the department"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:id="@+id/department_head"/>
+
+
+
+
+    <Button
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/department_head"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginLeft="@dimen/_200sdp"
+        android:textSize="@dimen/_20ssp"
+        android:text="save"
+        android:id="@+id/save_department_data"/>
+
+
+</RelativeLayout>
