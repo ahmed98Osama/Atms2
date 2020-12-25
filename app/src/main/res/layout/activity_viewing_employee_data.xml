@@ -93,15 +93,7 @@
         android:text="edit"
         android:id="@+id/edit_employee_data"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/phone_number_employee"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:textSize="@dimen/_20ssp"
-        android:text="permissions"
-        android:id="@+id/view_employee_permissions"/>
+
 
     <Spinner
         android:layout_width="@dimen/_220sdp"

@@ -80,7 +80,6 @@ public class ViewingEmployeeData extends AppCompatActivity {
 
 
 
-        button = findViewById(R.id.view_employee_permissions);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

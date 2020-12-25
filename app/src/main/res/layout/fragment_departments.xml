@@ -5,7 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".departments">
 
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_20ssp"
+        android:textColor="@android:color/black"
+        android:text="Departments"
+        android:layout_margin="@dimen/_10sdp"
+        android:id="@+id/department_data"/>
 
 
 

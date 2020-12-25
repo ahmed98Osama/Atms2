@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/teal_700"
         android:textSize="20sp"
+        android:drawableLeft="@drawable/empname"
         android:layout_margin="@dimen/_12sdp"
         android:gravity="center"
         android:id="@+id/emp_name"/>

@@ -6,12 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".employees">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/employees"
+        android:textSize="@dimen/_20ssp"
+        android:text="employees"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/black"/>
+
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_12sdp"
         android:layout_marginBottom="@dimen/_62sdp"
+        android:layout_below="@id/employees"
         android:id="@+id/employees_list"/>
 
     </RelativeLayout>

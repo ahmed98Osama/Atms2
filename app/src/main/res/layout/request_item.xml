@@ -13,6 +13,7 @@
         android:textSize="@dimen/_18ssp"
         android:layout_margin="@dimen/_15sdp"
         android:textColor="@color/black"
+        android:drawableLeft="@drawable/empname"
         android:id="@+id/employee_name_request"/>
     <TextView
         android:layout_width="wrap_content"
@@ -22,6 +23,7 @@
         android:layout_marginTop="@dimen/_7sdp"
         android:textColor="@color/black"
         android:layout_marginLeft="@dimen/_35sdp"
+        android:drawableLeft="@drawable/email"
         android:id="@+id/request_message"/>
 
     <Button
