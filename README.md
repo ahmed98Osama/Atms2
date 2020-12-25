@@ -5,6 +5,6 @@
  
  to run application download the apk " Apk for Tester Atm2.apk" then install it on any android device more than 5.0 
  
- to debug the source code download android studio then  open proooject and chosse project folder
+ to debug the source code download android studio then  open project and chosse project folder
 
 
