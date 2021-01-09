@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -113,58 +115,8 @@ public class departments extends Fragment {
       });
 
 
-        departmentsList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 
-                final int which_item = position;
-
-                new AlertDialog.Builder(getContext())
-                        .setIcon(R.drawable.ic_delete)
-                        .setTitle("Are you sure ?")
-                        .setTitle("Do you want to delete this item ")
-                        .setPositiveButton("yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                String name = departmentArrayList.get(position);
-                                departmentArrayList.remove(which_item);
-                                departmentListAdapter.notifyDataSetChanged();
-                                Query query = departmentRef.orderByChild(name);
-                                query.addChildEventListener(new ChildEventListener() {
-                                    @Override
-                                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                                        snapshot.getRef().removeValue();
-                                    }
-
-                                    @Override
-                                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-                                    }
-
-                                    @Override
-                                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-                                    }
-
-                                    @Override
-                                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-                                    }
-
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError error) {
-
-                                    }
-                                });
-                            }
-                        })
-                        .setNegativeButton("No",null)
-                        .show();
-                return true;
-            }
-        });
-
-
+        delete();
         getData();
         return V;
     }
@@ -204,6 +156,55 @@ public class departments extends Fragment {
            }
        });
 
+   }
+
+
+
+   public void delete(){
+       departmentsList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+           @Override
+           public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+               final int which_item = position;
+
+               new AlertDialog.Builder(getContext())
+                       .setIcon(R.drawable.ic_delete)
+                       .setTitle("Are you sure ?")
+                       .setTitle("Do you want to delete this item ")
+                       .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                           @Override
+                           public void onClick(DialogInterface dialog, int which) {
+                               String name = departmentArrayList.get(position);
+                               departmentArrayList.remove(which_item);
+                               departmentListAdapter.notifyDataSetChanged();
+
+
+                               Query query = departmentRef.orderByChild("departmentName").equalTo(name);
+
+                               query.addListenerForSingleValueEvent(new ValueEventListener() {
+                                   @Override
+                                   public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+
+                                       for (DataSnapshot child: snapshot.getChildren()) {
+                                           Log.d("User key", child.getKey());
+                                           Log.d("User ref", child.getRef().toString());
+                                           Log.d("User val", child.getValue().toString());
+                                       }
+                                   }
+
+                                   @Override
+                                   public void onCancelled(@NonNull DatabaseError error) {
+
+                                   }
+                               });
+                           }
+                       })
+                       .setNegativeButton("No",null)
+                       .show();
+               return true;
+           }
+       });
    }
 
 }

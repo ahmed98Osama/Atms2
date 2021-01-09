@@ -58,8 +58,11 @@ public class InsertingDepartmentData extends AppCompatActivity {
                     Toast.makeText(InsertingDepartmentData.this, "please insert all data", Toast.LENGTH_SHORT).show();
                 }else{
 
-                    departmentDataModel = new DepartmentDataModel(name, head);
-                    departmentRef.push().setValue(departmentDataModel);
+                    //departmentDataModel = new DepartmentDataModel(name, head);
+                    String idRef =  departmentRef.push().getKey();
+                    departmentRef.child(idRef).child("id").setValue(idRef);
+                    departmentRef.child(idRef).child("departmentName").setValue(name);
+                    departmentRef.child(idRef).child("departmentHead").setValue(head);
 
                     departmentHead.getText().clear();
                     departmentNameAdded.getText().clear();

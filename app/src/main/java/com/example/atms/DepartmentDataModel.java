@@ -7,12 +7,24 @@ public class DepartmentDataModel {
     private String departmentName;
     private String departmentHead;
 
+    private String id;
+
     public DepartmentDataModel() {
     }
 
-    public DepartmentDataModel(String departmentName, String departmentHead) {
+    public DepartmentDataModel(String departmentName, String departmentHead, String id) {
         this.departmentName = departmentName;
         this.departmentHead = departmentHead;
+        this.id = id;
+    }
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getDepartmentName() {
